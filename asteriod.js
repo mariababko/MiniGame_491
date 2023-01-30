@@ -2,7 +2,7 @@ class Asteriod{
 
     constructor(game) {
         this.game = game;
-        const asteriodList = ["./asteriod1.png", "./asteriod2.png", "./asteriod3.png"];
+        const asteriodList = ["./Sprites/asteriod1.png", "./Sprites/asteriod2.png", "./Sprites/asteriod3.png"];
         this.animator = new Animator(ASSET_MANAGER.getAsset(
             asteriodList[Math.floor(Math.random() * asteriodList.length)]),
             0, 0, 100, 100, 10, 0.15);
@@ -16,11 +16,13 @@ class Asteriod{
 
     update() {
         this.y += this.speed * this.game.clockTick;
-        if(this.y > 500) {
+        if(this.y > 550) {
+            this.removeFromWorld = true;
             var explosion = new Explosion(gameEngine);
             explosion.setX(this.x);
             explosion.setY(this.y);
             gameEngine.addEntity(explosion);
+            setTimeout(() => { explosion.removeFromWorld = true; }, 1000);
         };
     };
 

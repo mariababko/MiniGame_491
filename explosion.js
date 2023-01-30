@@ -2,7 +2,7 @@ class Explosion{
 
     constructor(game) {
         this.game = game;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./explosion.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/explosion.png"),
             0, 0, 128, 128, 12, 0.1);
 
         this.x = 0;

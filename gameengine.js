@@ -13,12 +13,21 @@ class GameEngine {
         this.click = null;
         this.mouse = null;
         this.wheel = null;
-        this.keys = {};
+
+        this.setKeysNotPressed();
+        this.inCanvas = true; // tells whether in the game area
 
         // Options and the Details
         this.options = options || {
             debugging: false,
         };
+    };
+
+    setKeysNotPressed() {
+        this.button1 = false;
+        this.button2 = false;
+        this.button3 = false;
+        this.button4 = false;
     };
 
     init(ctx) {
@@ -37,6 +46,7 @@ class GameEngine {
     };
 
     startInput() {
+        var that = this;
         const getXandY = e => ({
             x: e.clientX - this.ctx.canvas.getBoundingClientRect().left,
             y: e.clientY - this.ctx.canvas.getBoundingClientRect().top
@@ -72,9 +82,55 @@ class GameEngine {
             this.rightclick = getXandY(e);
         });
 
-        this.ctx.canvas.addEventListener("keydown", event => this.keys[event.key] = true);
-        this.ctx.canvas.addEventListener("keyup", event => this.keys[event.key] = false);
+        function keydownListener (e) {
+            //e.preventDefault();
+            switch (e.code) {
+                case "KeyC":
+                    that.button1 = true;
+                    break;
+                case "KeyV":
+                    that.button2 = true;
+                    break;
+                case "KeyB":
+                    that.button3 = true;
+                    break;
+                case "KeyN":
+                    that.button4 = true;
+                    break;
+            }
+        };
+
+        function keyUpListener (e) {
+            //e.preventDefault();
+            switch (e.code) {
+                case "KeyC":
+                    that.button1 = false;
+                    break;
+                case "KeyV":
+                    that.button2 = false;
+                    break;
+                case "KeyB":
+                    that.button3 = false;
+                    break;
+                case "KeyN":
+                    that.button4 = false;
+                    break;
+            }
+        };
+
+        that.keydown = keydownListener;
+        that.keyup = keyUpListener;
+
+        this.ctx.canvas.addEventListener("keydown", that.keydown);
+        this.ctx.canvas.addEventListener("keyup", that.keyup);
+
+        document.getElementById("gameWorld").addEventListener('blur', () => {
+            that.inCanvas = false;
+            that.setKeysNotPressed();
+        });
+
     };
+
 
     addEntity(entity) {
         this.entities.push(entity);
