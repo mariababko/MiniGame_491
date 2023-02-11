@@ -17,24 +17,9 @@ ASSET_MANAGER.downloadAll(() => {
 
 	ctx.imageSmoothingEnabled = false;
 
-	var green_area = new Green_Area(gameEngine);
-	//green_area.removeFromWorld = true;
-	gameEngine.addEntity(green_area);
-
-
-	gameEngine.addEntity(new Shooting_Area(gameEngine));
-
-	gameEngine.addEntity(new Asteriod(gameEngine));
-
-	setTimeout(() => { gameEngine.addEntity(new Asteriod(gameEngine)); }, 2000);
-
-	setTimeout(() => { gameEngine.addEntity(new Asteriod(gameEngine)); }, 3000);
-
-	gameEngine.addEntity(new Earth(gameEngine));
-
-	//gameEngine.addEntity(new Explosion(gameEngine));
-
 	gameEngine.init(ctx);
+
+	new Scenemanager(gameEngine);
 
 	gameEngine.start();
 });

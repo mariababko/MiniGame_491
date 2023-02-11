@@ -2,23 +2,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <style>
+        canvas {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            font-size: 20px;
+        }
+        div {
+            text-align: center;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+        h2 {
+            text-align: center;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+    </style>
+
     <meta charset="utf-8">
     <title>Space Rhythm Game</title>
-  
+
+
     <script type="text/javascript" src="./assetmanager.js"></script>
     <script type="text/javascript" src="./timer.js"></script>
     <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./util.js"></script>
     <script type="text/javascript" src="./animator.js"></script>
-    <script type="text/javascript" src="./shooting_area.js"></script>
-    <script type="text/javascript" src="./earth.js"></script>
-    <script type="text/javascript" src="./asteriod.js"></script>
-    <script type="text/javascript" src="./explosion.js"></script>
+    <script type="text/javascript" src="./boundingbox.js"></script>
+    <script type="text/javascript" src="./scenemanager.js"></script>
+
+    <script type="text/javascript" src="levels/titlescreen.js"></script>
+    <script type="text/javascript" src="levels/levels.js"></script>
+
+
+    <script type="text/javascript" src="entities/shooting_area.js"></script>
+    <script type="text/javascript" src="entities/earth.js"></script>
+    <script type="text/javascript" src="entities/asteriod.js"></script>
+    <script type="text/javascript" src="entities/explosion.js"></script>
+
+
     <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
-    <canvas id="gameWorld" width="1024" height="768" style="background-image: url('Sprites/space_background.png'); border: 1px solid black" tabindex="0" autofocus></canvas>
+    <canvas id="gameWorld" width="1024" height="768" style="background-image: url('sprites/space_background.png'); border: 1px solid black" tabindex="0" autofocus></canvas>
     <h2>Use buttons: c, v, b, n</h2>
-    <h2>Currently a very unfinished space themed rhythm game</h2>
+
+    <div>
+        <br />
+        <input type="checkbox" id="debug"> Debug <input type="checkbox" id="mute"> Mute <input type="range" id="volume" min="0" max="1" value="0.1" step="0.05"> Volume
+    </div>
 </body>
 </html>

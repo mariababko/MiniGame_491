@@ -46,36 +46,16 @@ class Shooting_Area{
 }
 
 class Green_Area {
-    constructor(game) {
-        this.game = game;
+    constructor(game, x, y, button) {
+        Object.assign(this, {game, x, y, button});
         this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/green_area.png"),
             0, 0, 315, 228, 1, 2);
 
-        this.x = 45;
-        this.y = 400;
-        this.speed = 100;
     };
 
     update() {
-        if (this.game.button1) {
-            this.removeFromWorld = false;
-            this.x = 45;
-            this.y = 400;
-        }
-        if (this.game.button2) {
-            this.removeFromWorld = false;
-            this.x = 263;
-            this.y = 400;
-        }
-        if (this.game.button3) {
-            this.removeFromWorld = false;
-            this.x = 482;
-            this.y = 400;
-        }
-        if (this.game.button4) {
-            this.removeFromWorld = false;
-            this.x = 703;
-            this.y = 400;
+        if (this.button) {
+            this.removeFromWorld = true;
         }
     };
 

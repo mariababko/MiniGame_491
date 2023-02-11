@@ -37,7 +37,6 @@ class GameEngine {
     };
 
     start() {
-        this.running = true;
         const gameLoop = () => {
             this.loop();
             requestAnimFrame(gameLoop, this.ctx.canvas);
@@ -136,6 +135,10 @@ class GameEngine {
         this.entities.push(entity);
     };
 
+    addEntityToTop(entity) {
+        this.entities.unshift(entity) ;
+    };
+
     draw() {
         // Clear the whole canvas with transparent color (rgba(0, 0, 0, 0))
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
@@ -144,6 +147,10 @@ class GameEngine {
         for (let i = this.entities.length - 1; i >= 0; i--) {
             this.entities[i].draw(this.ctx, this);
         }
+
+        //NOT SURE IF NEEDED
+        this.camera.draw(this.ctx);
+
     };
 
     update() {
@@ -156,6 +163,9 @@ class GameEngine {
                 entity.update();
             }
         }
+
+        //NOT SURE IF NEEDED
+        this.camera.update();
 
         for (let i = this.entities.length - 1; i >= 0; --i) {
             if (this.entities[i].removeFromWorld) {
