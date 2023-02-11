@@ -12,10 +12,20 @@ class Asteriod{
         this.x = randomSpots[Math.floor(Math.random() * randomSpots.length)];
         this.y = -100;
         this.speed = 300;
+
+        this.updateBB();
+
+    };
+
+    updateBB() {
+        this.lastBB = this.BB;
+        this.BB = new BoundingBox(this.x,this.y,100,100);
+
     };
 
     update() {
         this.y += this.speed * this.game.clockTick;
+        this.updateBB();
         if(this.y > 550) {
             this.removeFromWorld = true;
             var explosion = new Explosion(gameEngine);
@@ -28,5 +38,12 @@ class Asteriod{
 
     draw(ctx) {
         this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y);
+
+        PARAMS.DEBUG = document.getElementById("debug").checked;
+        if (PARAMS.DEBUG) {
+            ctx.strokeStyle = 'Red';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(this.BB.x - this.game.camera.x, this.BB.y - this.game.camera.y, this.BB.width, this.BB.height);
+        }
     };
 }

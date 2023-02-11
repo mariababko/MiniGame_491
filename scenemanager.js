@@ -41,16 +41,16 @@ class Scenemanager {
 
         //green area
         if (this.game.button1) {
-            this.game.addEntityToTop(new Green_Area(this.game, 45, 400, this.game.button1));
+            this.game.addEntityToTop(new Green_Area(this.game, 90, 457, this.game.button1));
         }
         if (this.game.button2) {
-            this.game.addEntityToTop(new Green_Area(this.game, 263, 400, this.game.button2));
+            this.game.addEntityToTop(new Green_Area(this.game, 307, 457, this.game.button2));
         }
         if (this.game.button3) {
-            this.game.addEntityToTop(new Green_Area(this.game, 482, 400, this.game.button3));
+            this.game.addEntityToTop(new Green_Area(this.game, 526, 457, this.game.button3));
         }
         if (this.game.button4) {
-            this.game.addEntityToTop(new Green_Area(this.game, 704, 400, this.game.button4));
+            this.game.addEntityToTop(new Green_Area(this.game, 747, 457, this.game.button4));
         }
 
     };
