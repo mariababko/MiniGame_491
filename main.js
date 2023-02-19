@@ -10,6 +10,10 @@ ASSET_MANAGER.queueDownload("./Sprites/asteriod3.png");
 ASSET_MANAGER.queueDownload("./Sprites/shooting_area.png");
 ASSET_MANAGER.queueDownload("./Sprites/green_area.png");
 ASSET_MANAGER.queueDownload("./Sprites/explosion.png");
+ASSET_MANAGER.queueDownload("./Sprites/health_outline.png");
+ASSET_MANAGER.queueDownload("./Sprites/health.png");
+
+
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");

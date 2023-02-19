@@ -24,6 +24,13 @@ class Scenemanager {
         if (this.currentLevel === levelOne) {
             this.clearEntities();
 
+
+            this.game.addEntity(new HealthOutline(this.game));
+            this.game.addEntity(new HealthGreenBar(this.game, 72));
+
+            this.game.addEntity(new HealthGreyBar(this.game));
+
+
             this.game.addEntity(new Shooting_Area(this.game));
 
             this.game.addEntity(new Asteriod(this.game));
