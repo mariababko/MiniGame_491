@@ -5,6 +5,8 @@ class Scenemanager {
         this.x = 0;
         this.y = 0;
 
+        this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
+
         this.loadLevel(titleScreen);
     }
 
@@ -17,8 +19,16 @@ class Scenemanager {
     loadLevel(level) {
         this.currentLevel = level;
 
+        // title screen
         if (this.currentLevel === titleScreen) {
+            this.clearEntities();
             this.game.addEntity(new TitleScreen(this.game));
+        }
+
+        // lose screen
+        if (this.currentLevel === loseScreen) {
+            this.clearEntities();
+            this.game.addEntity(new LoseScreen(this.game));
         }
 
         if (this.currentLevel === levelOne) {
@@ -26,7 +36,7 @@ class Scenemanager {
 
 
             this.game.addEntity(new HealthOutline(this.game));
-            this.game.addEntity(new HealthGreenBar(this.game, 72));
+            this.game.addEntity(this.healthGreenBar);
 
             this.game.addEntity(new HealthGreyBar(this.game));
 
@@ -38,6 +48,18 @@ class Scenemanager {
             setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 2000);
 
             setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 3000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 4000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 5000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 6000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 7000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 8000);
+
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 9000);
 
             this.game.addEntity(new Earth(this.game));
         }

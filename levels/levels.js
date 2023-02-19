@@ -5,3 +5,7 @@ let levelOne = {
 let titleScreen = {
     label: "title screen"
 };
+
+let loseScreen = {
+    label: "lose screen"
+};

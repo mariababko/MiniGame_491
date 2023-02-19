@@ -27,6 +27,7 @@ class Asteriod{
         this.y += this.speed * this.game.clockTick;
         this.updateBB();
         if(this.y > 550) {
+            this.game.camera.healthGreenBar.health -= 1;
             this.removeFromWorld = true;
             var explosion = new Explosion(gameEngine);
             explosion.setX(this.x);

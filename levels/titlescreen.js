@@ -3,9 +3,9 @@ class TitleScreen {
         this.game = game;
 
         this.mouseBB = new BoundingBox(0, 0, 1, 1);
-        this.playBB = new BoundingBox((1024 / 2) - 50, (768 / 2) - 45, 100, 70);
-        this.creditsBB = new BoundingBox((1024 / 2) - 85, (768 / 2) + 155, 170, 70);
-        this.exitBB = new BoundingBox(600 - 50, 650 - 45, 100, 50);
+        this.playBB = new BoundingBox((PARAMS.CANVAS_WIDTH / 2) - 50, (PARAMS.CANVAS_HEIGHT / 2) - 45, 100, 70);
+        this.creditsBB = new BoundingBox((PARAMS.CANVAS_WIDTH / 2) - 85, (PARAMS.CANVAS_HEIGHT / 2) + 155, 170, 70);
+        this.exitBB = new BoundingBox(PARAMS.CANVAS_WIDTH/2 - 50, 650 - 45, 100, 50);
 
         this.credits = false;
     };
@@ -42,7 +42,7 @@ class TitleScreen {
 
             //title
             ctx.font = "Bold 60px Lucida Console";
-            ctx.fillText("Rhythm In Space", 1024 / 2, 100);
+            ctx.fillText("Rhythm In Space", PARAMS.CANVAS_WIDTH / 2, 100);
 
             ctx.font = "Bold 35px Lucida Console";
 
@@ -50,7 +50,7 @@ class TitleScreen {
             if (this.mouseBB.collide(this.playBB)) {
                 this.setGreenStroke(ctx);
             }
-            ctx.fillText("PLAY", 1024 / 2, 768 / 2);
+            ctx.fillText("PLAY", PARAMS.CANVAS_WIDTH / 2, PARAMS.CANVAS_HEIGHT / 2);
             ctx.strokeRect(this.playBB.left, this.playBB.top, this.playBB.width, this.playBB.height);
 
             this.setWhiteStroke(ctx);
@@ -59,7 +59,7 @@ class TitleScreen {
             if (this.mouseBB.collide(this.creditsBB)) {
                 this.setGreenStroke(ctx);
             }
-            ctx.fillText("CREDITS", 1024 / 2, 768 / 2 + 200);
+            ctx.fillText("CREDITS", PARAMS.CANVAS_WIDTH / 2, PARAMS.CANVAS_HEIGHT / 2 + 200);
             ctx.strokeRect(this.creditsBB.left, this.creditsBB.top, this.creditsBB.width, this.creditsBB.height);
 
         } else {
@@ -71,7 +71,7 @@ class TitleScreen {
             ctx.lineWidth = 6;
             ctx.textAlign = "center";
             ctx.font = "Bold 35px Lucida Console";
-            ctx.fillText("EXIT", 600, 640);
+            ctx.fillText("EXIT", PARAMS.CANVAS_WIDTH/2, 640);
             ctx.strokeRect(this.exitBB.left, this.exitBB.top, this.exitBB.width, this.exitBB.height);
 
         }
@@ -81,7 +81,7 @@ class TitleScreen {
             ctx.lineWidth = 6;
             ctx.textAlign = "center";
             ctx.font = "Bold 60px Lucida Console";
-            ctx.fillText("CREDITS", 720 / 2, 100);
+            ctx.fillText("CREDITS", PARAMS.CANVAS_WIDTH / 2, 100);
 
             ctx.textAlign = "left";
             ctx.font = "Bold 35px Lucida Console";

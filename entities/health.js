@@ -27,7 +27,7 @@ class HealthGreyBar{
         this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health_outline.png"),
             16, 29, 72, 6, 1, 2);
 
-        this.x = 34;
+        this.x = 37;
         this.y = 30;
         this.speed = 100;
     };
@@ -44,26 +44,55 @@ class HealthGreyBar{
 
 class HealthGreenBar{
 
-    constructor(game, width) {
-        Object.assign(this, {game, width})
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health.png"),
-            16, 49, width, 6, 1, 2);
+    constructor(game, x, y) {
+        Object.assign(this, {game, x, y});
+        // this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health.png"),
+        //     16, 49, width, 6, 1, 2);
 
-        this.x = 34;
-        this.y = 30;
-        this.speed = 100;
+        this.dWidth = 417;
+        this.dHeight = 35;
+
+        this.spritesheet = ASSET_MANAGER.getAsset("./Sprites/health.png")
+
+        this.width = 72
+
+        this.health = 7;
+
     };
 
     update() {
-        // this.x += this.speed * this.game.clockTick;
-        // if(this.x > 1024) this.x = 0;
+        if (this.health === 6) {
+            this.updateWidths(63, 365.4);
+        }
+        if (this.health === 5) {
+            this.updateWidths(54, 313);
+        }
+        if (this.health === 4) {
+            this.updateWidths(45, 261);
+        }
+        if (this.health === 3) {
+            this.updateWidths(36, 208.8);
+        }
+        if (this.health === 2) {
+            this.updateWidths(27,156.6);
+        }
+        if (this.health === 1) {
+            this.updateWidths(18, 104.4);
+        }
+        if (this.health === 0) {
+            this.game.camera.loadLevel(loseScreen);
+        }
+
     };
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5.8);
+        ctx.drawImage(this.spritesheet, 16, 49, this.width, 6, this.x, this.y, this.dWidth, this.dHeight);
+
+        //this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5.8);
     };
 
-    updateWidth(width) {
+    updateWidths(width, dWidth) {
         this.width = width;
+        this.dWidth = dWidth;
     }
 }
