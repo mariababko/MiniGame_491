@@ -50,7 +50,7 @@ class HealthGreenBar{
         this.dWidth = 417;
         this.dHeight = 35;
 
-        this.spritesheet = ASSET_MANAGER.getAsset("./Sprites/health.png")
+        this.spritesheet = ASSET_MANAGER.getAsset("./sprites/health.png")
 
         this.width = 72;
 
