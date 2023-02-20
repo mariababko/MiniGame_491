@@ -2,16 +2,16 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./Sprites/space_background.png");
-ASSET_MANAGER.queueDownload("./Sprites/earth.png");
-ASSET_MANAGER.queueDownload("./Sprites/asteriod1.png");
-ASSET_MANAGER.queueDownload("./Sprites/asteriod2.png");
-ASSET_MANAGER.queueDownload("./Sprites/asteriod3.png");
-ASSET_MANAGER.queueDownload("./Sprites/shooting_area.png");
-ASSET_MANAGER.queueDownload("./Sprites/green_area.png");
-ASSET_MANAGER.queueDownload("./Sprites/explosion.png");
-ASSET_MANAGER.queueDownload("./Sprites/health_outline.png");
-ASSET_MANAGER.queueDownload("./Sprites/health.png");
+ASSET_MANAGER.queueDownload("./sprites/space_background.png");
+ASSET_MANAGER.queueDownload("./sprites/earth.png");
+ASSET_MANAGER.queueDownload("./sprites/asteriod1.png");
+ASSET_MANAGER.queueDownload("./sprites/asteriod2.png");
+ASSET_MANAGER.queueDownload("./sprites/asteriod3.png");
+ASSET_MANAGER.queueDownload("./sprites/shooting_area.png");
+ASSET_MANAGER.queueDownload("./sprites/green_area.png");
+ASSET_MANAGER.queueDownload("./sprites/explosion.png");
+ASSET_MANAGER.queueDownload("./sprites/health_outline.png");
+ASSET_MANAGER.queueDownload("./sprites/health.png");
 
 
 

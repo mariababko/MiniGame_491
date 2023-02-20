@@ -2,7 +2,7 @@ class HealthOutline{
 
     constructor(game) {
         this.game = game;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health_outline.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./sprites/health_outline.png"),
             2, 42, 88, 14, 1, 2);
 
         this.x = 20;
@@ -24,7 +24,7 @@ class HealthGreyBar{
 
     constructor(game) {
         this.game = game;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health_outline.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./sprites/health_outline.png"),
             16, 29, 72, 6, 1, 2);
 
         this.x = 37;

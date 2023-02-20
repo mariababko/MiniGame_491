@@ -2,7 +2,7 @@ class Shooting_Area{
 
     constructor(game) {
         this.game = game;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/shooting_area.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./sprites/shooting_area.png"),
             0, 0, 984, 285, 1, 2);
 
         this.x = 30;
@@ -31,7 +31,7 @@ class Shooting_Area{
 class Green_Area {
     constructor(game, x, y, button) {
         Object.assign(this, {game, x, y, button});
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/green_area.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./sprites/green_area.png"),
             44, 57, 225, 128, 1, 2);
 
         this.BB = new BoundingBox(this.x,this.y,225,128);

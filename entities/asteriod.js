@@ -2,7 +2,7 @@ class Asteriod{
 
     constructor(game) {
         this.game = game;
-        const asteriodList = ["./Sprites/asteriod1.png", "./Sprites/asteriod2.png", "./Sprites/asteriod3.png"];
+        const asteriodList = ["./sprites/asteriod1.png", "./sprites/asteriod2.png", "./sprites/asteriod3.png"];
         this.animator = new Animator(ASSET_MANAGER.getAsset(
             asteriodList[Math.floor(Math.random() * asteriodList.length)]),
             0, 0, 100, 100, 10, 0.15);

@@ -2,7 +2,7 @@ class Earth{
 
     constructor(game) {
         this.game = game;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/earth.png"),
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./sprites/earth.png"),
             0, 0, 505, 508, 30, 2);
 
         this.x = 256;
