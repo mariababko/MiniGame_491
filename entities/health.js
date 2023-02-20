@@ -46,15 +46,13 @@ class HealthGreenBar{
 
     constructor(game, x, y) {
         Object.assign(this, {game, x, y});
-        // this.animator = new Animator(ASSET_MANAGER.getAsset("./Sprites/health.png"),
-        //     16, 49, width, 6, 1, 2);
 
         this.dWidth = 417;
         this.dHeight = 35;
 
         this.spritesheet = ASSET_MANAGER.getAsset("./Sprites/health.png")
 
-        this.width = 72
+        this.width = 72;
 
         this.health = 7;
 
@@ -80,6 +78,8 @@ class HealthGreenBar{
             this.updateWidths(18, 104.4);
         }
         if (this.health === 0) {
+            this.updateWidths(72, 417);
+            this.resetHealth();
             this.game.camera.loadLevel(loseScreen);
         }
 
@@ -94,5 +94,9 @@ class HealthGreenBar{
     updateWidths(width, dWidth) {
         this.width = width;
         this.dWidth = dWidth;
+    }
+
+    resetHealth() {
+        this.health = 7;
     }
 }

@@ -9,3 +9,7 @@ let titleScreen = {
 let loseScreen = {
     label: "lose screen"
 };
+
+let winScreen = {
+    label: "win screen"
+};

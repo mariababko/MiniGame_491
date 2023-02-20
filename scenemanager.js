@@ -25,9 +25,17 @@ class Scenemanager {
             this.game.addEntity(new TitleScreen(this.game));
         }
 
+        // win screen
+        if (this.currentLevel === winScreen) {
+            this.clearEntities();
+            this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
+            this.game.addEntity(new WinScreen(this.game));
+        }
+
         // lose screen
         if (this.currentLevel === loseScreen) {
             this.clearEntities();
+            this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
             this.game.addEntity(new LoseScreen(this.game));
         }
 
@@ -61,7 +69,9 @@ class Scenemanager {
 
             setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 9000);
 
-            this.game.addEntity(new Earth(this.game));
+            setTimeout(() => { this.game.camera.loadLevel(winScreen); }, 11000);
+
+                this.game.addEntity(new Earth(this.game));
         }
 
     };

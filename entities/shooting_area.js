@@ -36,6 +36,8 @@ class Green_Area {
 
         this.BB = new BoundingBox(this.x,this.y,225,128);
 
+        this.asteroidDestroyed = false;
+
     };
 
     update() {
@@ -45,17 +47,25 @@ class Green_Area {
         this.game.entities.forEach(function (entity) {
             //if the entity has a bounding box and we collided with it
             if (entity.BB && that.BB.collide(entity.BB)) {
-                if (entity instanceof Asteriod) {
+                //console.log("asteroid: " + that.asteroidDestroyed);
+                if (entity instanceof Asteriod && that.asteroidDestroyed === false) {
                     if (that.button) {
                         entity.removeFromWorld = true;
+
                     }
+                    that.asteroidDestroyed = true;
+                    //console.log("asteroid inside: " + that.asteroidDestroyed);
                 }
+                // CAN ADD A TIMER INSTEAD LOL to get around it
             }
         });
 
 
         if (this.button) {
             this.removeFromWorld = true;
+        } else {
+            // this.asteroidDestroyed = false;
+            // console.log("asteroid button not pressed: " + this.asteroidDestroyed);
         }
     };
 

@@ -11,7 +11,7 @@ class Asteriod{
 
         this.x = randomSpots[Math.floor(Math.random() * randomSpots.length)];
         this.y = -100;
-        this.speed = 300;
+        this.speed = 400;
 
         this.updateBB();
 
