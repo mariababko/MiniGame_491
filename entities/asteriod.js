@@ -34,6 +34,7 @@ class Asteriod{
             explosion.setY(this.y);
             gameEngine.addEntity(explosion);
             setTimeout(() => { explosion.removeFromWorld = true; }, 1000);
+            this.game.camera.asteroidCount -= 1;
         };
     };
 

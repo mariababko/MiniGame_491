@@ -8,6 +8,8 @@ class Scenemanager {
         this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
 
         this.loadLevel(titleScreen);
+
+        this.asteroidCount = 9;
     }
 
     clearEntities() {
@@ -53,43 +55,53 @@ class Scenemanager {
 
             this.game.addEntity(new Asteriod(this.game));
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 2000);
+            setTimeout(() => {
+                this.game.addEntity(new Asteriod(this.game));}, 2000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 3000);
+            setTimeout(() => {
+                this.game.addEntity(new Asteriod(this.game));}, 3000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 4000);
+            setTimeout(() => {
+                this.game.addEntity(new Asteriod(this.game));}, 4000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 5000);
+            setTimeout(() => {
+                this.game.addEntity(new Asteriod(this.game));}, 5000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 6000);
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game));}, 6000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 7000);
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game));}, 7000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 8000);
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game));}, 8000);
 
-            setTimeout(() => { this.game.addEntity(new Asteriod(this.game)); }, 9000);
+            setTimeout(() => { this.game.addEntity(new Asteriod(this.game));}, 9000);
 
-            setTimeout(() => { this.game.camera.loadLevel(winScreen); }, 11000);
 
-                this.game.addEntity(new Earth(this.game));
+            this.game.addEntity(new Earth(this.game));
         }
 
     };
 
     update() {
 
-        //green area
-        if (this.game.button1) {
-            this.game.addEntityToTop(new Green_Area(this.game, 90, 457, this.game.button1));
+        if (this.currentLevel === levelOne) {
+            //green area
+            if (this.game.button1) {
+                this.game.addEntityToTop(new Green_Area(this.game, 90, 457, this.game.button1));
+            }
+            if (this.game.button2) {
+                this.game.addEntityToTop(new Green_Area(this.game, 307, 457, this.game.button2));
+            }
+            if (this.game.button3) {
+                this.game.addEntityToTop(new Green_Area(this.game, 526, 457, this.game.button3));
+            }
+            if (this.game.button4) {
+                this.game.addEntityToTop(new Green_Area(this.game, 747, 457, this.game.button4));
+            }
         }
-        if (this.game.button2) {
-            this.game.addEntityToTop(new Green_Area(this.game, 307, 457, this.game.button2));
-        }
-        if (this.game.button3) {
-            this.game.addEntityToTop(new Green_Area(this.game, 526, 457, this.game.button3));
-        }
-        if (this.game.button4) {
-            this.game.addEntityToTop(new Green_Area(this.game, 747, 457, this.game.button4));
+
+        if (this.asteroidCount === 0) {
+            this.game.camera.loadLevel(winScreen);
+
         }
 
     };

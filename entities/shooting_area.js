@@ -54,6 +54,7 @@ class Green_Area {
 
                     }
                     that.asteroidDestroyed = true;
+                    that.game.camera.asteroidCount -= 1;
                     //console.log("asteroid inside: " + that.asteroidDestroyed);
                 }
                 // CAN ADD A TIMER INSTEAD LOL to get around it
