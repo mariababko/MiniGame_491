@@ -48,13 +48,15 @@ class Green_Area {
             //if the entity has a bounding box and we collided with it
             if (entity.BB && that.BB.collide(entity.BB)) {
                 //console.log("asteroid: " + that.asteroidDestroyed);
-                if (entity instanceof Asteriod && that.asteroidDestroyed === false) {
+                if (entity instanceof Asteroid && that.asteroidDestroyed === false) {
                     if (that.button) {
                         entity.removeFromWorld = true;
+                        if (entity.lastAsteroid === true) {
+                            that.game.camera.loadLevel(winScreen);
+                        }
 
                     }
                     that.asteroidDestroyed = true;
-                    that.game.camera.asteroidCount -= 1;
                     //console.log("asteroid inside: " + that.asteroidDestroyed);
                 }
                 // CAN ADD A TIMER INSTEAD LOL to get around it

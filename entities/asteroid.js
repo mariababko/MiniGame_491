@@ -1,10 +1,12 @@
-class Asteriod{
+class Asteroid {
 
-    constructor(game) {
+    constructor(game, lastAsteroid) {
         this.game = game;
-        const asteriodList = ["./sprites/asteriod1.png", "./sprites/asteriod2.png", "./sprites/asteriod3.png"];
+        this.lastAsteroid = lastAsteroid;
+
+        const asteroidList = ["./sprites/asteroid1.png", "./sprites/asteroid2.png", "./sprites/asteroid3.png"];
         this.animator = new Animator(ASSET_MANAGER.getAsset(
-            asteriodList[Math.floor(Math.random() * asteriodList.length)]),
+            asteroidList[Math.floor(Math.random() * asteroidList.length)]),
             0, 0, 100, 100, 10, 0.15);
 
         const randomSpots = [150, 380, 600, 830];
@@ -34,8 +36,12 @@ class Asteriod{
             explosion.setY(this.y);
             gameEngine.addEntity(explosion);
             setTimeout(() => { explosion.removeFromWorld = true; }, 1000);
-            this.game.camera.asteroidCount -= 1;
+
+            if (this.lastAsteroid === true) {
+                this.game.camera.loadLevel(winScreen);
+            }
         };
+
     };
 
     draw(ctx) {
