@@ -1,5 +1,6 @@
 let levelOne = {
-    label: "Phase 1"
+    music: "./music/noragami_op2.mp3",
+    label: "1-1"
 }
 
 let titleScreen = {

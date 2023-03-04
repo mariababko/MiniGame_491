@@ -42,7 +42,17 @@ class Scenemanager {
         if (this.currentLevel === levelOne) {
             this.clearEntities();
             this.game.addEntity(new LevelOne(this.game, this.healthGreenBar));
+            ASSET_MANAGER.playAsset(this.currentLevel.music);
         }
+
+    };
+
+    updateAudio() {
+        var mute = document.getElementById("mute").checked;
+        var volume = document.getElementById("volume").value;
+
+        ASSET_MANAGER.muteAudio(mute);
+        ASSET_MANAGER.adjustVolume(volume);
 
     };
 
@@ -63,6 +73,8 @@ class Scenemanager {
                 this.game.addEntityToTop(new Green_Area(this.game, 747, 457, this.game.button4));
             }
         }
+
+        this.updateAudio();
 
     };
 

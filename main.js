@@ -2,8 +2,11 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
+// Background
 ASSET_MANAGER.queueDownload("./sprites/space_background.png");
 ASSET_MANAGER.queueDownload("./sprites/earth.png");
+
+//Entities
 ASSET_MANAGER.queueDownload("./sprites/asteroid1.png");
 ASSET_MANAGER.queueDownload("./sprites/asteroid2.png");
 ASSET_MANAGER.queueDownload("./sprites/asteroid3.png");
@@ -12,6 +15,9 @@ ASSET_MANAGER.queueDownload("./sprites/green_area.png");
 ASSET_MANAGER.queueDownload("./sprites/explosion.png");
 ASSET_MANAGER.queueDownload("./sprites/health_outline.png");
 ASSET_MANAGER.queueDownload("./sprites/health.png");
+
+//Music
+ASSET_MANAGER.queueDownload("./music/noragami_op2.mp3");
 
 
 
