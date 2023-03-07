@@ -15,23 +15,41 @@ class LevelOne {
 
         this.game.addEntity(new Shooting_Area(this.game));
 
-        this.game.addEntity(new Asteroid(this.game, false));
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 1);
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 1);
 
-        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 2000);
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 580);
 
-        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 3000);
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 950);
 
-        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 4000);
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 1300);
 
-        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 5000);
+        setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, 1620);
 
-        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 6000);
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 1920);
 
-        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 7000);
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 2270);
 
-        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 8000);
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 2530);
 
-        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, true));}, 9000);
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 2870);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 3150);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 3470);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 3780);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 4150);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 4420);
+
+        setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 4810);
+
+        //setTimeout(() => { this.game.addEntity(new Asteroid(this.game, false));}, 3780);
+
+
+
 
 
         this.game.addEntity(new Earth(this.game));

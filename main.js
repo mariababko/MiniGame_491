@@ -17,7 +17,7 @@ ASSET_MANAGER.queueDownload("./sprites/health_outline.png");
 ASSET_MANAGER.queueDownload("./sprites/health.png");
 
 //Music
-ASSET_MANAGER.queueDownload("./music/noragami_op2.mp3");
+ASSET_MANAGER.queueDownload("./music/fireforce_op.mp3");
 
 
 

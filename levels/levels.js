@@ -1,5 +1,5 @@
 let levelOne = {
-    music: "./music/noragami_op2.mp3",
+    music: "./music/fireforce_op.mp3",
     label: "1-1"
 }
 
