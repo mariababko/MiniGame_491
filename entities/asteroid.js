@@ -38,6 +38,7 @@ class Asteroid {
             setTimeout(() => { explosion.removeFromWorld = true; }, 1000);
 
             if (this.lastAsteroid === true) {
+                ASSET_MANAGER.pauseBackgroundMusic();
                 this.game.camera.loadLevel(winScreen);
             }
         };
