@@ -13,7 +13,7 @@ class Asteroid {
 
         this.x = randomSpots[Math.floor(Math.random() * randomSpots.length)];
         this.y = -100;
-        this.speed = 700;
+        this.speed = 750;
 
         this.updateBB();
 
@@ -29,7 +29,9 @@ class Asteroid {
         this.y += this.speed * this.game.clockTick;
         this.updateBB();
         if(this.y > 550) {
-            this.game.camera.healthGreenBar.health -= 1;
+            if (this.game.camera.healthGreenBar.health > 0) {
+                this.game.camera.healthGreenBar.health -= 1;
+            }
             this.removeFromWorld = true;
             var explosion = new Explosion(gameEngine);
             explosion.setX(this.x);
@@ -46,7 +48,11 @@ class Asteroid {
     };
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 1);
+        if (this.game.camera.healthGreenBar.health === 0) {
+            //dont draw
+        } else {
+            this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 1);
+        }
 
         PARAMS.DEBUG = document.getElementById("debug").checked;
         if (PARAMS.DEBUG) {
@@ -55,4 +61,27 @@ class Asteroid {
             ctx.strokeRect(this.BB.x - this.game.camera.x, this.BB.y - this.game.camera.y, this.BB.width, this.BB.height);
         }
     };
+}
+
+class AsteroidCreation {
+    constructor(game) {
+        this.game = game;
+    }
+
+    createAsteroidFalse(time) {
+        return setTimeout(() => {this.game.addEntity(new Asteroid(this.game, false));}, time);
+    }
+
+    createAsteroidTrue(time) {
+        return setTimeout(() => {this.game.addEntity(new Asteroid(this.game, true));}, time);
+    }
+
+    update() {
+        // method not used but declaration is necessary for game engine
+    };
+
+    draw(ctx) {
+        // method not used but declaration is necessary for game engine
+    };
+
 }

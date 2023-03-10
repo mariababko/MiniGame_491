@@ -16,7 +16,11 @@ class Explosion{
     };
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 1);
+        if (this.game.camera.healthGreenBar.health === 0) {
+            // dont draw
+        } else {
+            this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 1);
+        }
     };
 
     setX (x) {

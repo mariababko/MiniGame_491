@@ -79,7 +79,6 @@ class HealthGreenBar{
         }
         if (this.health === 0) {
             this.updateWidths(72, 417);
-            this.resetHealth();
             ASSET_MANAGER.pauseBackgroundMusic();
             this.game.camera.loadLevel(loseScreen);
         }

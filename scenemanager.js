@@ -7,6 +7,8 @@ class Scenemanager {
 
         this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
 
+        this.asteroidCreation = new AsteroidCreation(this.game);
+
         this.loadLevel(titleScreen);
     }
 
@@ -28,20 +30,19 @@ class Scenemanager {
         // win screen
         if (this.currentLevel === winScreen) {
             this.clearEntities();
-            this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
             this.game.addEntity(new WinScreen(this.game));
         }
 
         // lose screen
         if (this.currentLevel === loseScreen) {
             this.clearEntities();
-            this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
             this.game.addEntity(new LoseScreen(this.game));
         }
 
         if (this.currentLevel === levelOne) {
             this.clearEntities();
-            this.game.addEntity(new LevelOne(this.game, this.healthGreenBar));
+            this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);
+            this.game.addEntity(new LevelOne(this.game, this.healthGreenBar, this.asteroidCreation));
             ASSET_MANAGER.playAsset(this.currentLevel.music);
         }
 

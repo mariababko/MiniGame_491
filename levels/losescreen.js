@@ -14,8 +14,8 @@ class LoseScreen {
 
             // restart game
             if (this.mouseBB.collide(this.restartBB)) {
+                document.location.reload();
                 this.game.camera.loadLevel(titleScreen);
-                this.game.male = false;
             }
             // reset user click
             this.game.click = null;
