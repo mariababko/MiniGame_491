@@ -33,10 +33,10 @@ class Asteroid {
                 this.game.camera.healthGreenBar.health -= 1;
             }
             this.removeFromWorld = true;
-            var explosion = new Explosion(gameEngine);
+            var explosion = new Explosion(this.game);
             explosion.setX(this.x);
             explosion.setY(this.y);
-            gameEngine.addEntity(explosion);
+            this.game.addEntityToTop(explosion);
             setTimeout(() => { explosion.removeFromWorld = true; }, 1000);
 
             if (this.lastAsteroid === true) {

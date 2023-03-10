@@ -19,6 +19,9 @@ ASSET_MANAGER.queueDownload("./sprites/health.png");
 //Music
 ASSET_MANAGER.queueDownload("./music/fireforce_op.mp3");
 
+//Sound effects
+ASSET_MANAGER.queueDownload("./sound_effects/laser.mp3");
+
 
 
 ASSET_MANAGER.downloadAll(() => {
