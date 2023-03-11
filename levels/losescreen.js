@@ -35,7 +35,7 @@ class LoseScreen {
 
         //title
         ctx.font = "Bold 60px Lucida Console";
-        ctx.fillText("Game Over", PARAMS.CANVAS_WIDTH / 2, 100);
+        ctx.fillText("Game Over", PARAMS.CANVAS_WIDTH / 2, 200);
 
         ctx.font = "Bold 35px Lucida Console";
 

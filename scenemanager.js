@@ -29,13 +29,13 @@ class Scenemanager {
 
         // win screen
         if (this.currentLevel === winScreen) {
-            this.clearEntities();
+            //this.clearEntities();
             this.game.addEntity(new WinScreen(this.game));
         }
 
         // lose screen
         if (this.currentLevel === loseScreen) {
-            this.clearEntities();
+            //this.clearEntities();
             this.game.addEntity(new LoseScreen(this.game));
         }
 
