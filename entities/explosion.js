@@ -7,12 +7,10 @@ class Explosion{
 
         this.x = 0;
         this.y = 0;
-        this.speed = 100;
     };
 
     update() {
-        // this.x += this.speed * this.game.clockTick;
-        // if(this.x > 1024) this.x = 0;
+
     };
 
     draw(ctx) {

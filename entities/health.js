@@ -7,12 +7,9 @@ class HealthOutline{
 
         this.x = 20;
         this.y = 20;
-        this.speed = 100;
     };
 
     update() {
-        // this.x += this.speed * this.game.clockTick;
-        // if(this.x > 1024) this.x = 0;
     };
 
     draw(ctx) {
@@ -29,12 +26,10 @@ class HealthGreyBar{
 
         this.x = 37;
         this.y = 30;
-        this.speed = 100;
     };
 
     update() {
-        // this.x += this.speed * this.game.clockTick;
-        // if(this.x > 1024) this.x = 0;
+
     };
 
     draw(ctx) {
@@ -78,7 +73,7 @@ class HealthGreenBar{
             this.updateWidths(18, 104.4);
         }
         if (this.health === 0) {
-            this.updateWidths(72, 417);
+            this.updateWidths(0, 0);
             ASSET_MANAGER.pauseBackgroundMusic();
             this.game.camera.loadLevel(loseScreen);
         }
@@ -87,8 +82,6 @@ class HealthGreenBar{
 
     draw(ctx) {
         ctx.drawImage(this.spritesheet, 16, 49, this.width, 6, this.x, this.y, this.dWidth, this.dHeight);
-
-        //this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 5.8);
     };
 
     updateWidths(width, dWidth) {
@@ -96,7 +89,4 @@ class HealthGreenBar{
         this.dWidth = dWidth;
     }
 
-    resetHealth() {
-        this.health = 7;
-    }
 }

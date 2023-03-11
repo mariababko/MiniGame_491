@@ -7,7 +7,6 @@ class Shooting_Area{
 
         this.x = 30;
         this.y = 400;
-        this.speed = 100;
 
         this.BB = new BoundingBox(this.x + 62,this.y + 59,878,123);
 
@@ -39,21 +38,8 @@ class Green_Area {
 
         this.BB = new BoundingBox(this.x,this.y,225,128);
 
-        this.asteroidDestroyed = false;
-
     };
 
-    // sleep(ms) {
-    //     return new Promise(resolve => setTimeout(resolve, ms));
-    // }
-    //
-    // async demo() {
-    //     for (let i = 0; i < 5; i++) {
-    //         console.log(`Waiting ${i} seconds...`);
-    //         await this.sleep(i * 1000);
-    //     }
-    //     console.log('Done');
-    // }
 
     update() {
 
@@ -62,10 +48,8 @@ class Green_Area {
         this.game.entities.forEach(function (entity) {
             //if the entity has a bounding box and we collided with it
             if (entity.BB && that.BB.collide(entity.BB)) {
-                //that.asteroidDestroyed === false
-                //CHECK FOR BETTER ACCURACY OF THE BOUNDING BOXESD
+
                 if (entity instanceof Asteroid && (entity.BB.bottom >= 400)) {
-                    //console.log("asteroid COLLISION: " + that.asteroidDestroyed);
                     if (that.button) {
                         entity.removeFromWorld = true;
 
@@ -74,13 +58,10 @@ class Green_Area {
                             that.game.camera.loadLevel(winScreen);
                         }
 
-
-                        // that.asteroidDestroyed = true;
-                        // console.log("asteroid inside: " + that.asteroidDestroyed);
                     }
 
                 }
-                // CAN ADD A TIMER INSTEAD LOL to get around it
+
             }
         });
 
@@ -88,10 +69,7 @@ class Green_Area {
         if (this.button) {
             this.removeFromWorld = true;
         }
-        // } else {
-        //     //this.asteroidDestroyed = false;
-        //     console.log("asteroid button not pressed: " + this.asteroidDestroyed);
-        // }
+
     };
 
     draw(ctx) {

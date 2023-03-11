@@ -47,8 +47,6 @@ class IntroCutscene {
     };
 
     draw(ctx) {
-        // black box to cover screen
-        //ctx.strokeRect(0, 0, this.game.canvas.width, this.game.canvas.height);
         this.setBlackStroke(ctx);
         ctx.fillRect(0, 100, PARAMS.CANVAS_WIDTH, 300);
 
@@ -112,7 +110,6 @@ class IntroCutscene {
             ctx.fillText("Here they come!", 180, 360);
 
         }
-
 
     };
 

@@ -39,7 +39,7 @@ class Scenemanager {
             this.game.addEntity(new LoseScreen(this.game));
         }
 
-        // lose screen
+        // intro cutscene screen
         if (this.currentLevel === introCutscene) {
             this.clearEntities();
             this.healthGreenBar = new HealthGreenBar(this.game, 37, 30);

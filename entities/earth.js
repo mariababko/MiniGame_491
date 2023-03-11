@@ -7,12 +7,10 @@ class Earth{
 
         this.x = 256;
         this.y = 600;
-        this.speed = 100;
     };
 
     update() {
-        // this.x += this.speed * this.game.clockTick;
-        // if(this.x > 1024) this.x = 0;
+
     };
 
     draw(ctx) {
