@@ -16,7 +16,7 @@ class TitleScreen {
 
             if (this.mouseBB.collide(this.playBB)) {
                 this.game.camera.clearEntities();
-                this.game.camera.loadLevel(levelOne);
+                this.game.camera.loadLevel(introCutscene);
             } else if (this.mouseBB.collide(this.creditsBB)) {
                 this.credits = true;
             } else {

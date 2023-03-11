@@ -13,7 +13,7 @@ class Asteroid {
 
         this.x = randomSpots[Math.floor(Math.random() * randomSpots.length)];
         this.y = -100;
-        this.speed = 750;
+        this.speed = 800;
 
         this.updateBB();
 

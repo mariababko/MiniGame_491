@@ -14,3 +14,7 @@ let loseScreen = {
 let winScreen = {
     label: "win screen"
 };
+
+let introCutscene = {
+    label: "intro cutscene"
+};
